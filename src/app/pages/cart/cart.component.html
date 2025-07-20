@@ -1,0 +1,31 @@
+<div class="container mt-5">
+  <h2 class="text-center text-rosado mb-4">🛒 Carrito de Compras</h2>
+
+  <div *ngIf="items.length === 0" class="alert alert-info text-center">
+    Tu carrito está vacío.
+  </div>
+
+  <div *ngIf="items.length > 0" class="table-responsive">
+    <table class="table table-striped text-center align-middle">
+      <thead>
+        <tr>
+          <th>Imagen</th>
+          <th>Producto</th>
+          <th>Precio</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of items">
+          <td><img [src]="item.imagen" alt="{{ item.nombre }}" width="60" height="60" class="rounded shadow-sm"></td>
+          <td>{{ item.nombre }}</td>
+          <td>${{ item.precio }}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="d-flex justify-content-between align-items-center mt-4">
+      <button (click)="limpiarCarrito()" class="btn btn-outline-danger">Vaciar Carrito</button>
+      <h4 class="text-dark">Total: <span class="text-rosado">${{ obtenerTotal() }}</span></h4>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,81 @@
+<div class="container py-4">
+  <h2>Productos</h2>
+
+  <form #prodForm="ngForm" (ngSubmit)="editando ? actualizar(prodForm) : agregar(prodForm)" class="mb-3">
+    <div class="row g-2">
+      <div class="col-sm">
+        <input
+          class="form-control"
+          name="nombre"
+          [ngModel]="editando ? editando.nombre : nuevo.nombre"
+          (ngModelChange)="actualizarCampo('nombre', $event)"
+          placeholder="Nombre"
+          required
+        />
+      </div>
+      <div class="col-sm">
+        <input
+          type="number"
+          class="form-control"
+          name="precio"
+          [ngModel]="editando ? editando.precio : nuevo.precio"
+          (ngModelChange)="actualizarCampo('precio', $event)"
+          placeholder="Precio"
+          required
+        />
+      </div>
+      <div class="col-sm">
+        <input
+          class="form-control"
+          name="imagen"
+          [ngModel]="editando ? editando.imagen : nuevo.imagen"
+          (ngModelChange)="actualizarCampo('imagen', $event)"
+          placeholder="URL imagen"
+        />
+      </div>
+      <div class="col-sm">
+        <input
+          class="form-control"
+          name="descripcion"
+          [ngModel]="editando ? editando.descripcion : nuevo.descripcion"
+          (ngModelChange)="actualizarCampo('descripcion', $event)"
+          placeholder="Descripción"
+        />
+      </div>
+      <div class="col-auto">
+        <button type="submit" class="btn btn-primary">{{ editando ? 'Actualizar' : 'Agregar' }}</button>
+        <button *ngIf="editando" type="button" class="btn btn-secondary ms-2" (click)="cancelar()">Cancelar</button>
+      </div>
+    </div>
+  </form>
+
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Precio</th>
+        <th>Imagen</th>
+        <th>Descripción</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let p of productos">
+        <td>{{ p.id }}</td>
+        <td>{{ p.nombre }}</td>
+        <td>{{ p.precio | currency:'CLP' }}</td>
+        <td><img [src]="p.imagen" alt="{{ p.nombre }}" style="height: 40px;" /></td>
+        <td>{{ p.descripcion }}</td>
+        <td>
+          <button class="btn btn-outline-primary btn-sm me-1" (click)="editar(p)">
+            Editar
+          </button>
+          <button class="btn btn-danger btn-sm" (click)="eliminar(p.id)">
+            Eliminar
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,52 @@
+/* Contenedor general */
+.container {
+  padding-top: 20px;
+}
+
+/* Tarjetas de producto */
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 1.5rem;
+  border: 1px solid #f8f9fa;
+}
+
+/* Sombra y movimiento al pasar el puntero */
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Imagen del producto */
+.card-img-top {
+  max-height: 250px;
+  object-fit: contain;
+  border-radius: 1rem;
+}
+
+/* Botón rosado */
+.btn-pink {
+  background-color: #c2185b;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  border-radius: 0.75rem;
+  color: #ffffff;
+}
+
+.btn-pink:hover {
+  background-color: #880e4f;
+  color: #fff;
+}
+
+/* Títulos y textos centrados */
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.card-text {
+  font-size: 0.95rem;
+  color: #555;
+}

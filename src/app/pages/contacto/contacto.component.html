@@ -1,0 +1,72 @@
+<div class="contacto-container">
+  <div class="contacto-form">
+    <h2>Contáctanos</h2>
+    <form [formGroup]="contactForm" (ngSubmit)="enviarMensaje()">
+      <div class="form-group">
+        <label for="nombre">Nombre</label>
+        <input
+          id="nombre"
+          type="text"
+          formControlName="nombre"
+          class="form-control"
+          [class.is-invalid]="contactForm.get('nombre')?.invalid && contactForm.get('nombre')?.touched"
+        />
+        <div class="invalid-feedback" *ngIf="contactForm.get('nombre')?.hasError('required')">
+          El nombre es obligatorio.
+        </div>  
+      </div>
+
+      <div class="form-group">
+        <label for="email">Correo electrónico</label>
+        <input
+          id="email"
+          type="email"
+          formControlName="email"
+          class="form-control"
+          [class.is-invalid]="contactForm.get('email')?.invalid && contactForm.get('email')?.touched"
+        />
+        <div class="invalid-feedback" *ngIf="contactForm.get('email')?.hasError('required')">
+          El correo es obligatorio.
+        </div>
+        <div class="invalid-feedback" *ngIf="contactForm.get('email')?.hasError('email')">
+          Formato de correo inválido.
+        </div>     
+      </div>
+
+      <div class="form-group">
+        <label for="mensaje">Mensaje</label>
+        <textarea
+          id="mensaje"
+          formControlName="mensaje"
+          class="form-control"
+          rows="5"
+          placeholder="Escribe tu mensaje aquí..."
+          [class.is-invalid]="contactForm.get('mensaje')?.invalid && contactForm.get('mensaje')?.touched"
+        ></textarea>
+        <div class="invalid-feedback" *ngIf="contactForm.get('mensaje')?.hasError('required')">
+          El mensaje es obligatorio.
+        </div>
+        <div class="invalid-feedback" *ngIf="contactForm.get('mensaje')?.hasError('minlength')">
+          Debe tener al menos 10 caracteres.
+        </div>
+      </div>
+
+      <button type="submit" class="btn-enviar" [disabled]="contactForm.invalid">Enviar mensaje</button>
+      <button type="button" class="btn btn-outline-dark mt-2" (click)="limpiar()">Limpiar</button>
+    </form>
+    
+    <div class="alert alert-success mt-3" *ngIf="enviado">¡Mensaje enviado correctamente!</div>
+  </div>
+
+  <div class="contacto-info">
+    <h4>Horario de atención</h4>
+    <p>Lunes a Viernes: 9:00 - 18:00</p>
+    <p>Sábados: 10:00 - 14:00</p>
+
+    <h4>Correo</h4>
+    <p>contacto&#64;pinnacosta.cl</p>
+
+    <h4>Teléfono</h4>
+    <p>+56 9 1234 5678</p>
+  </div>
+</div>

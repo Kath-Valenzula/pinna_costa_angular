@@ -1,0 +1,1140 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>pinna-costa documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">pinna-costa documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  RegistroComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/pages/registro/registro.component.ts</code>
+</p>
+
+
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Componente de registro de nuevos usuarios. Incluye validaciones y persistencia local.</p>
+
+    </p>
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-registro</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./registro.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./registro.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#error" >error</a>
+                            </li>
+                            <li>
+                                <a href="#mensaje" >mensaje</a>
+                            </li>
+                            <li>
+                                <a href="#registroForm" >registroForm</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#ageValidator" >ageValidator</a>
+                            </li>
+                            <li>
+                                <a href="#limpiar" >limpiar</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#passwordsMatchValidator" >passwordsMatchValidator</a>
+                            </li>
+                            <li>
+                                <a href="#registrar" >registrar</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(fb: FormBuilder, title: Title, meta: Meta)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/pages/registro/registro.component.ts:23</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Constructor para inyectar servicios necesarios</p>
+</div>
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>fb</td>
+                                                  
+                                                        <td>
+                                                                    <code>FormBuilder</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <p>FormBuilder para construir formularios</p>
+
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>title</td>
+                                                  
+                                                        <td>
+                                                                    <code>Title</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <p>Servicio para modificar el título del documento</p>
+
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>meta</td>
+                                                  
+                                                        <td>
+                                                                    <code>Meta</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <p>Servicio para modificar etiquetas meta</p>
+
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ageValidator"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>ageValidator</b></span>
+                        <a href="#ageValidator"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>ageValidator(control: AbstractControl)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="76"
+                                    class="link-to-prism">src/app/pages/registro/registro.component.ts:76</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Valida que el usuario tenga mínimo 13 años</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>control</td>
+                                            <td>
+                                                        <code>AbstractControl</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Control del formulario (fecha de nacimiento)</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>ValidationErrors | null</code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>ValidationErrors | null</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="limpiar"></a>
+                    <span class="name">
+                        <span ><b>limpiar</b></span>
+                        <a href="#limpiar"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>limpiar()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="134"
+                                    class="link-to-prism">src/app/pages/registro/registro.component.ts:134</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Limpia el formulario y los mensajes de estado</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="40"
+                                    class="link-to-prism">src/app/pages/registro/registro.component.ts:40</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Inicializa el formulario, el título y meta descripción</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="passwordsMatchValidator"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>passwordsMatchValidator</b></span>
+                        <a href="#passwordsMatchValidator"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>passwordsMatchValidator(group: AbstractControl)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="65"
+                                    class="link-to-prism">src/app/pages/registro/registro.component.ts:65</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Valida que las contraseñas ingresadas coincidan</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>group</td>
+                                            <td>
+                                                        <code>AbstractControl</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Formulario o grupo de controles</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>ValidationErrors | null</code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>ValidationErrors | null</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="registrar"></a>
+                    <span class="name">
+                        <span ><b>registrar</b></span>
+                        <a href="#registrar"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>registrar()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="92"
+                                    class="link-to-prism">src/app/pages/registro/registro.component.ts:92</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Envía el formulario de registro, guarda el usuario en localStorage si es válido</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="error"></a>
+                    <span class="name">
+                        <span ><b>error</b></span>
+                        <a href="#error"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/pages/registro/registro.component.ts:20</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Mensaje de error mostrado al usuario</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mensaje"></a>
+                    <span class="name">
+                        <span ><b>mensaje</b></span>
+                        <a href="#mensaje"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/pages/registro/registro.component.ts:23</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Mensaje informativo tras el registro</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="registroForm"></a>
+                    <span class="name">
+                        <span ><b>registroForm</b></span>
+                        <a href="#registroForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>FormGroup</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/pages/registro/registro.component.ts:17</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Formulario reactivo de registro</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { Title, Meta } from &#x27;@angular/platform-browser&#x27;;
+import { FormBuilder, FormGroup, Validators, AbstractControl, ValidationErrors } from &#x27;@angular/forms&#x27;;
+import { Usuario } from &#x27;src/app/models/usuario.model&#x27;;
+
+/**
+ * Componente de registro de nuevos usuarios. Incluye validaciones y persistencia local.
+ */
+@Component({
+  selector: &#x27;app-registro&#x27;,
+  templateUrl: &#x27;./registro.component.html&#x27;,
+  styleUrls: [&#x27;./registro.component.css&#x27;]
+})
+export class RegistroComponent implements OnInit {
+
+  /** Formulario reactivo de registro */
+  registroForm!: FormGroup;
+
+  /** Mensaje de error mostrado al usuario */
+  error &#x3D; &#x27;&#x27;;
+
+  /** Mensaje informativo tras el registro */
+  mensaje &#x3D; &#x27;&#x27;;
+
+  /**
+   * Constructor para inyectar servicios necesarios
+   * @param fb FormBuilder para construir formularios
+   * @param title Servicio para modificar el título del documento
+   * @param meta Servicio para modificar etiquetas meta
+   */
+  constructor(
+    private fb: FormBuilder,
+    private title: Title,
+    private meta: Meta
+  ) {}
+
+  /**
+   * Inicializa el formulario, el título y meta descripción
+   */
+  ngOnInit(): void {
+    this.title.setTitle(&#x27;Registro - Piña Costa&#x27;);
+    this.meta.updateTag({
+      name: &#x27;description&#x27;,
+      content: &#x27;Crea una nueva cuenta en Piña Costa.&#x27;
+    });
+
+    this.registroForm &#x3D; this.fb.group({
+      nombre:            [&#x27;&#x27;, Validators.required],
+      email:             [&#x27;&#x27;, [Validators.required, Validators.email]],
+      password:          [&#x27;&#x27;, [
+        Validators.required,
+        Validators.pattern(/^(?&#x3D;.*[A-Z])(?&#x3D;.*[a-z])(?&#x3D;.*\d)(?&#x3D;.*[^A-Za-z0-9]).{8,}$/)
+      ]],
+      confirmPassword:   [&#x27;&#x27;, Validators.required],
+      direccionDespacho: [&#x27;&#x27;],
+      fechaNacimiento:   [&#x27;&#x27;, [Validators.required, this.ageValidator]]
+    }, { validators: this.passwordsMatchValidator });
+  }
+
+  /**
+   * Valida que las contraseñas ingresadas coincidan
+   * @param group Formulario o grupo de controles
+   * @returns ValidationErrors | null
+   */
+  private passwordsMatchValidator(group: AbstractControl): ValidationErrors | null {
+    const p &#x3D; group.get(&#x27;password&#x27;)?.value;
+    const c &#x3D; group.get(&#x27;confirmPassword&#x27;)?.value;
+    return p &amp;&amp; c &amp;&amp; p !&#x3D;&#x3D; c ? { passwordsMismatch: true } : null;
+  }
+
+  /**
+   * Valida que el usuario tenga mínimo 13 años
+   * @param control Control del formulario (fecha de nacimiento)
+   * @returns ValidationErrors | null
+   */
+  private ageValidator(control: AbstractControl): ValidationErrors | null {
+    const val &#x3D; control.value;
+    if (!val) return null;
+    const dob &#x3D; new Date(val);
+    const today &#x3D; new Date();
+    let age &#x3D; today.getFullYear() - dob.getFullYear();
+    if (today.getMonth() &lt; dob.getMonth() ||
+        (today.getMonth() &#x3D;&#x3D;&#x3D; dob.getMonth() &amp;&amp; today.getDate() &lt; dob.getDate())) {
+      age--;
+    }
+    return age &lt; 13 ? { ageTooLow: true } : null;
+  }
+
+  /**
+   * Envía el formulario de registro, guarda el usuario en localStorage si es válido
+   */
+  registrar(): void {
+    if (this.registroForm.invalid) {
+      if (this.registroForm.errors?.[&#x27;passwordsMismatch&#x27;]) {
+        this.error &#x3D; &#x27;Las contraseñas no coinciden.&#x27;;
+      } else if (this.registroForm.get(&#x27;password&#x27;)?.hasError(&#x27;pattern&#x27;)) {
+        this.error &#x3D; &#x27;La contraseña debe tener al menos 8 caracteres, 1 mayúscula, 1 minúscula, 1 número y 1 carácter especial.&#x27;;
+      } else if (this.registroForm.get(&#x27;fechaNacimiento&#x27;)?.hasError(&#x27;ageTooLow&#x27;)) {
+        this.error &#x3D; &#x27;Debes tener al menos 13 años.&#x27;;
+      } else {
+        this.error &#x3D; &#x27;Revisa los campos obligatorios.&#x27;;
+      }
+      this.mensaje &#x3D; &#x27;&#x27;;
+      return;
+    }
+
+    const u &#x3D; this.registroForm.value;
+    const nuevo: Usuario &#x3D; {
+      nombre: u.nombre,
+      email: u.email,
+      password: u.password,
+      rol: &#x27;usuario&#x27;,
+      direccionDespacho: u.direccionDespacho,
+      fechaNacimiento: u.fechaNacimiento
+    };
+
+    const lista: Usuario[] &#x3D; JSON.parse(localStorage.getItem(&#x27;usuarios&#x27;) || &#x27;[]&#x27;);
+    if (lista.some(x &#x3D;&gt; x.email &#x3D;&#x3D;&#x3D; nuevo.email)) {
+      this.error &#x3D; &#x27;El correo ya está registrado.&#x27;;
+      this.mensaje &#x3D; &#x27;&#x27;;
+      return;
+    }
+
+    lista.push(nuevo);
+    localStorage.setItem(&#x27;usuarios&#x27;, JSON.stringify(lista));
+    this.mensaje &#x3D; &#x27;Cuenta creada correctamente.&#x27;;
+    this.error &#x3D; &#x27;&#x27;;
+    this.registroForm.reset();
+  }
+
+  /**
+   * Limpia el formulario y los mensajes de estado
+   */
+  limpiar(): void {
+    this.registroForm.reset();
+    this.error &#x3D; &#x27;&#x27;;
+    this.mensaje &#x3D; &#x27;&#x27;;
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;container py-5&quot;&gt;
+  &lt;div class&#x3D;&quot;row justify-content-center&quot;&gt;
+    &lt;div class&#x3D;&quot;col-12 col-md-8 col-lg-6 registro-container&quot;&gt;
+      &lt;h2 class&#x3D;&quot;text-center text-pink mb-4&quot;&gt;Registrarse&lt;/h2&gt;
+
+  &lt;form [formGroup]&#x3D;&quot;registroForm&quot; (ngSubmit)&#x3D;&quot;registrar()&quot; class&#x3D;&quot;bg-white p-4 shadow rounded&quot;&gt;
+   
+    &lt;div class&#x3D;&quot;mb-3&quot;&gt;
+      &lt;label for&#x3D;&quot;nombre&quot; class&#x3D;&quot;form-label text-dark&quot;&gt;Nombre completo&lt;/label&gt;
+      &lt;input id&#x3D;&quot;nombre&quot; type&#x3D;&quot;text&quot; formControlName&#x3D;&quot;nombre&quot;
+        class&#x3D;&quot;form-control&quot;
+        [class.is-invalid]&#x3D;&quot;registroForm.get(&#x27;nombre&#x27;)?.invalid &amp;&amp; registroForm.get(&#x27;nombre&#x27;)?.touched&quot;/&gt;
+      &lt;div class&#x3D;&quot;invalid-feedback&quot; *ngIf&#x3D;&quot;registroForm.get(&#x27;nombre&#x27;)?.hasError(&#x27;required&#x27;)&quot;&gt;
+        El nombre es obligatorio.
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+   
+    &lt;div class&#x3D;&quot;mb-3&quot;&gt;
+      &lt;label for&#x3D;&quot;email&quot; class&#x3D;&quot;form-label text-dark&quot;&gt;Correo electrónico&lt;/label&gt;
+      &lt;input id&#x3D;&quot;email&quot; type&#x3D;&quot;email&quot; formControlName&#x3D;&quot;email&quot;
+        class&#x3D;&quot;form-control&quot;
+        [class.is-invalid]&#x3D;&quot;registroForm.get(&#x27;email&#x27;)?.invalid &amp;&amp; registroForm.get(&#x27;email&#x27;)?.touched&quot;/&gt;
+      &lt;div class&#x3D;&quot;invalid-feedback&quot; *ngIf&#x3D;&quot;registroForm.get(&#x27;email&#x27;)?.hasError(&#x27;required&#x27;)&quot;&gt;
+        El correo es obligatorio.
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;invalid-feedback&quot; *ngIf&#x3D;&quot;registroForm.get(&#x27;email&#x27;)?.hasError(&#x27;email&#x27;)&quot;&gt;
+        Formato de correo inválido.
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+   
+    &lt;div class&#x3D;&quot;mb-3&quot;&gt;
+      &lt;label for&#x3D;&quot;password&quot; class&#x3D;&quot;form-label text-dark&quot;&gt;Contraseña&lt;/label&gt;
+      &lt;input id&#x3D;&quot;password&quot; type&#x3D;&quot;password&quot; formControlName&#x3D;&quot;password&quot;
+        class&#x3D;&quot;form-control&quot;
+        [class.is-invalid]&#x3D;&quot;registroForm.get(&#x27;password&#x27;)?.invalid &amp;&amp; registroForm.get(&#x27;password&#x27;)?.touched&quot;/&gt;
+      &lt;div class&#x3D;&quot;invalid-feedback&quot; *ngIf&#x3D;&quot;registroForm.get(&#x27;password&#x27;)?.hasError(&#x27;required&#x27;)&quot;&gt;
+        La contraseña es obligatoria.
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;invalid-feedback&quot; *ngIf&#x3D;&quot;registroForm.get(&#x27;password&#x27;)?.hasError(&#x27;pattern&#x27;)&quot;&gt;
+        Debe tener al menos 8 caracteres, 1 mayúscula, 1 minúscula, 1 número y 1 carácter especial.
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+   
+    &lt;div class&#x3D;&quot;mb-3&quot;&gt;
+      &lt;label for&#x3D;&quot;confirmPassword&quot; class&#x3D;&quot;form-label text-dark&quot;&gt;Confirmar contraseña&lt;/label&gt;
+      &lt;input id&#x3D;&quot;confirmPassword&quot; type&#x3D;&quot;password&quot; formControlName&#x3D;&quot;confirmPassword&quot;
+        class&#x3D;&quot;form-control&quot;
+        [class.is-invalid]&#x3D;&quot;
+          (registroForm.get(&#x27;confirmPassword&#x27;)?.invalid &amp;&amp; registroForm.get(&#x27;confirmPassword&#x27;)?.touched)
+          || registroForm.errors?.[&#x27;passwordsMismatch&#x27;]&quot;/&gt;
+      &lt;div class&#x3D;&quot;invalid-feedback&quot; *ngIf&#x3D;&quot;registroForm.get(&#x27;confirmPassword&#x27;)?.hasError(&#x27;required&#x27;)&quot;&gt;
+        Debes confirmar la contraseña.
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;invalid-feedback&quot; *ngIf&#x3D;&quot;registroForm.errors?.[&#x27;passwordsMismatch&#x27;]&quot;&gt;
+        Las contraseñas no coinciden.
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+   
+    &lt;div class&#x3D;&quot;mb-3&quot;&gt;
+      &lt;label for&#x3D;&quot;direccionDespacho&quot; class&#x3D;&quot;form-label text-dark&quot;&gt;Dirección de despacho&lt;/label&gt;
+      &lt;input id&#x3D;&quot;direccionDespacho&quot; type&#x3D;&quot;text&quot; formControlName&#x3D;&quot;direccionDespacho&quot;
+        class&#x3D;&quot;form-control&quot;/&gt;
+    &lt;/div&gt;
+
+  
+    &lt;div class&#x3D;&quot;mb-4&quot;&gt;
+      &lt;label for&#x3D;&quot;fechaNacimiento&quot; class&#x3D;&quot;form-label text-dark&quot;&gt;Fecha de nacimiento&lt;/label&gt;
+      &lt;input id&#x3D;&quot;fechaNacimiento&quot; type&#x3D;&quot;date&quot; formControlName&#x3D;&quot;fechaNacimiento&quot;
+        class&#x3D;&quot;form-control&quot;
+        [class.is-invalid]&#x3D;&quot;registroForm.get(&#x27;fechaNacimiento&#x27;)?.hasError(&#x27;required&#x27;)
+          || registroForm.get(&#x27;fechaNacimiento&#x27;)?.hasError(&#x27;ageTooLow&#x27;)&quot;/&gt;
+      &lt;div class&#x3D;&quot;invalid-feedback&quot; *ngIf&#x3D;&quot;registroForm.get(&#x27;fechaNacimiento&#x27;)?.hasError(&#x27;required&#x27;)&quot;&gt;
+        La fecha es obligatoria.
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;invalid-feedback&quot; *ngIf&#x3D;&quot;registroForm.get(&#x27;fechaNacimiento&#x27;)?.hasError(&#x27;ageTooLow&#x27;)&quot;&gt;
+        Debes tener al menos 13 años.
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+   
+    &lt;div *ngIf&#x3D;&quot;error&quot; class&#x3D;&quot;alert alert-danger text-center&quot;&gt;{{ error }}&lt;/div&gt;
+    &lt;div *ngIf&#x3D;&quot;mensaje&quot; class&#x3D;&quot;alert alert-success text-center&quot;&gt;{{ mensaje }}&lt;/div&gt;
+
+  
+    &lt;button type&#x3D;&quot;submit&quot; class&#x3D;&quot;btn btn-pink w-100&quot;&gt;Crear cuenta&lt;/button&gt;
+    &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-outline-dark w-100 mt-2&quot; (click)&#x3D;&quot;limpiar()&quot;&gt;Limpiar&lt;/button&gt;
+  &lt;/form&gt;
+
+  &lt;div class&#x3D;&quot;text-center mt-3&quot;&gt;
+    &lt;a routerLink&#x3D;&quot;/login&quot; class&#x3D;&quot;text-decoration-none text-pink&quot;&gt;¿Ya tienes cuenta? Iniciar sesión&lt;/a&gt;
+  &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./registro.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.registro-container {
+  width: 100%;
+  padding: 1.5rem;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+@media (max-width: 575.98px) {
+  .registro-container {
+    padding: 1rem;
+  }
+}
+.form-group {
+  margin-bottom: 1rem;
+}
+.invalid-feedback { color: #dc3545; }
+button[disabled] { opacity: .6; cursor: not-allowed; }
+
+.text-pink {
+  color: #e91e63;
+}
+
+.btn-pink {
+  background-color: #e91e63;
+  color: white;
+  border: none;
+}
+
+.btn-pink:hover {
+  background-color: #d81b60;
+  color: white;
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="container py-5">  <div class="row justify-content-center">    <div class="col-12 col-md-8 col-lg-6 registro-container">      <h2 class="text-center text-pink mb-4">Registrarse</h2>  <form [formGroup]="registroForm" (ngSubmit)="registrar()" class="bg-white p-4 shadow rounded">       <div class="mb-3">      <label for="nombre" class="form-label text-dark">Nombre completo</label>      <input id="nombre" type="text" formControlName="nombre"        class="form-control"        [class.is-invalid]="registroForm.get(\'nombre\')?.invalid && registroForm.get(\'nombre\')?.touched"/>      <div class="invalid-feedback" *ngIf="registroForm.get(\'nombre\')?.hasError(\'required\')">        El nombre es obligatorio.      </div>    </div>       <div class="mb-3">      <label for="email" class="form-label text-dark">Correo electrónico</label>      <input id="email" type="email" formControlName="email"        class="form-control"        [class.is-invalid]="registroForm.get(\'email\')?.invalid && registroForm.get(\'email\')?.touched"/>      <div class="invalid-feedback" *ngIf="registroForm.get(\'email\')?.hasError(\'required\')">        El correo es obligatorio.      </div>      <div class="invalid-feedback" *ngIf="registroForm.get(\'email\')?.hasError(\'email\')">        Formato de correo inválido.      </div>    </div>       <div class="mb-3">      <label for="password" class="form-label text-dark">Contraseña</label>      <input id="password" type="password" formControlName="password"        class="form-control"        [class.is-invalid]="registroForm.get(\'password\')?.invalid && registroForm.get(\'password\')?.touched"/>      <div class="invalid-feedback" *ngIf="registroForm.get(\'password\')?.hasError(\'required\')">        La contraseña es obligatoria.      </div>      <div class="invalid-feedback" *ngIf="registroForm.get(\'password\')?.hasError(\'pattern\')">        Debe tener al menos 8 caracteres, 1 mayúscula, 1 minúscula, 1 número y 1 carácter especial.      </div>    </div>       <div class="mb-3">      <label for="confirmPassword" class="form-label text-dark">Confirmar contraseña</label>      <input id="confirmPassword" type="password" formControlName="confirmPassword"        class="form-control"        [class.is-invalid]="          (registroForm.get(\'confirmPassword\')?.invalid && registroForm.get(\'confirmPassword\')?.touched)          || registroForm.errors?.[\'passwordsMismatch\']"/>      <div class="invalid-feedback" *ngIf="registroForm.get(\'confirmPassword\')?.hasError(\'required\')">        Debes confirmar la contraseña.      </div>      <div class="invalid-feedback" *ngIf="registroForm.errors?.[\'passwordsMismatch\']">        Las contraseñas no coinciden.      </div>    </div>       <div class="mb-3">      <label for="direccionDespacho" class="form-label text-dark">Dirección de despacho</label>      <input id="direccionDespacho" type="text" formControlName="direccionDespacho"        class="form-control"/>    </div>      <div class="mb-4">      <label for="fechaNacimiento" class="form-label text-dark">Fecha de nacimiento</label>      <input id="fechaNacimiento" type="date" formControlName="fechaNacimiento"        class="form-control"        [class.is-invalid]="registroForm.get(\'fechaNacimiento\')?.hasError(\'required\')          || registroForm.get(\'fechaNacimiento\')?.hasError(\'ageTooLow\')"/>      <div class="invalid-feedback" *ngIf="registroForm.get(\'fechaNacimiento\')?.hasError(\'required\')">        La fecha es obligatoria.      </div>      <div class="invalid-feedback" *ngIf="registroForm.get(\'fechaNacimiento\')?.hasError(\'ageTooLow\')">        Debes tener al menos 13 años.      </div>    </div>       <div *ngIf="error" class="alert alert-danger text-center">{{ error }}</div>    <div *ngIf="mensaje" class="alert alert-success text-center">{{ mensaje }}</div>      <button type="submit" class="btn btn-pink w-100">Crear cuenta</button>    <button type="button" class="btn btn-outline-dark w-100 mt-2" (click)="limpiar()">Limpiar</button>  </form>  <div class="text-center mt-3">    <a routerLink="/login" class="text-decoration-none text-pink">¿Ya tienes cuenta? Iniciar sesión</a>  </div>    </div>  </div></div></div>'
+    var COMPONENTS = [{'name': 'AcercaComponent', 'selector': 'app-acerca'},{'name': 'AdminComponent', 'selector': 'app-admin'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CartComponent', 'selector': 'app-cart'},{'name': 'CatalogoComponent', 'selector': 'app-catalogo'},{'name': 'ContactoComponent', 'selector': 'app-contacto'},{'name': 'CreateUserComponent', 'selector': 'app-create-user'},{'name': 'EncargosComponent', 'selector': 'app-encargos'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'ListaEncargosComponent', 'selector': 'app-lista-encargos'},{'name': 'ListaProductosComponent', 'selector': 'app-lista-productos'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'PerfilComponent', 'selector': 'app-perfil'},{'name': 'ProductoDetalleComponent', 'selector': 'app-producto-detalle'},{'name': 'RecuperarComponent', 'selector': 'app-recuperar'},{'name': 'RegistroComponent', 'selector': 'app-registro'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'RegistroComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'RegistroComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

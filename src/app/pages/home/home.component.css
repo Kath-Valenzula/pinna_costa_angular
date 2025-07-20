@@ -1,0 +1,26 @@
+
+.hero {
+  background: url('/assets/img/hero-bg.jpg') center/cover no-repeat;
+  height: 80vh;
+}
+
+/* Pantallas pequeñas */
+@media (max-width: 575.98px) {
+  .hero {
+    height: 40vh;
+  }
+}
+
+/* Pantallas medianas */
+@media (min-width: 576px) and (max-width: 991.98px) {
+  .hero {
+    height: 60vh;
+  }
+}
+
+/* Pantallas grandes */
+@media (min-width: 992px) {
+  .hero {
+    height: 80vh;
+  }
+}

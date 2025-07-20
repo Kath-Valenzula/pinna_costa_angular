@@ -1,0 +1,33 @@
+.contacto-container {
+  background-color: #fff;
+  color: #000;
+}
+
+.contacto-form,
+.contacto-info {
+  padding: 1rem;
+}
+
+.contacto-form h2,
+.contacto-info h4 {
+  color: #e91e63;
+  margin-bottom: 1rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #e91e63;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: #c2185b;
+  box-shadow: 0 0 0 0.2rem rgba(233, 30, 99, 0.25);
+}

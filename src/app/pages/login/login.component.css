@@ -1,0 +1,59 @@
+.text-rose {
+  color: #c2185b;
+}
+
+.btn-pink {
+  background-color: #c2185b;
+  color: white;
+  border: none;
+}
+
+.login-container {
+  width: 100%;
+  padding: 30px;
+  background-color: #fff0f5;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(255, 105, 180, 0.2);
+}
+
+@media (max-width: 575.98px) {
+  .login-container {
+    padding: 20px;
+  }
+}
+
+h2 {
+  color: #c2185b;
+  font-weight: bold;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: #333;
+}
+
+.btn-pink {
+  background-color: #c2185b;
+  color: white;
+  border: none;
+}
+
+
+.extra-links a,
+.extra-links button {
+  color: #d63384;
+
+  cursor: pointer;
+  font-weight: bold;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.extra-links a:hover,
+.extra-links button:hover,
+.extra-links button:focus {
+  text-decoration: underline;
+  outline: 2px solid #d63384;
+  outline-offset: 2px;
+}

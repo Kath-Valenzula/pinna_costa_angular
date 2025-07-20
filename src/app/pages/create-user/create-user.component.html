@@ -1,0 +1,60 @@
+<div class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-8 col-lg-6">
+      <div class="card p-4 bg-light shadow">
+        <h2 class="text-center mb-4 text-rosado">Crear Nuevo Usuario</h2>
+
+    <form [formGroup]="form" (ngSubmit)="crearUsuario()" novalidate>
+      <div class="mb-3">
+        <label for="nombre" class="form-label">Nombre</label>
+        <input id="nombre" type="text" formControlName="nombre" class="form-control"
+          [class.is-invalid]="form.get('nombre')?.invalid && form.get('nombre')?.touched" />
+        <div class="invalid-feedback" *ngIf="form.get('nombre')?.hasError('required')">
+          El nombre es obligatorio.
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="email" class="form-label">Correo electrónico</label>
+        <input id="email" type="email" formControlName="email" class="form-control"
+          [class.is-invalid]="form.get('email')?.invalid && form.get('email')?.touched" />
+        <div class="invalid-feedback" *ngIf="form.get('email')?.hasError('required')">
+          El correo es obligatorio.
+        </div>
+        <div class="invalid-feedback" *ngIf="form.get('email')?.hasError('email')">
+          Formato de correo inválido.
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="password" class="form-label">Contraseña</label>
+        <input id="password" type="password" formControlName="password" class="form-control"
+          [class.is-invalid]="form.get('password')?.invalid && form.get('password')?.touched" />
+        <div class="invalid-feedback" *ngIf="form.get('password')?.hasError('required')">
+          La contraseña es obligatoria.
+        </div>
+        <div class="invalid-feedback" *ngIf="form.get('password')?.hasError('pattern')">
+          Debe tener 8 caracteres, mayúsculas, minúsculas, número y símbolo.
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="rol" class="form-label">Rol</label>
+        <select id="rol" formControlName="rol" class="form-select"
+          [class.is-invalid]="form.get('rol')?.invalid && form.get('rol')?.touched">
+          <option value="" disabled>Seleccione...</option>
+          <option value="Usuario">Usuario</option>
+          <option value="Administrador">Administrador</option>
+        </select>
+        <div class="invalid-feedback" *ngIf="form.get('rol')?.hasError('required')">
+          El rol es obligatorio.
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-rosado w-100" [disabled]="form.invalid">Guardar Usuario</button>
+      <div class="alert alert-danger mt-3" *ngIf="error">{{ error }}</div>
+    </form>
+      </div>
+    </div>
+  </div>
+</div>

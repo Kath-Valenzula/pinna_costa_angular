@@ -1,0 +1,26 @@
+<div class="container-fluid mt-4">
+  <h2 class="text-center mb-4">Catálogo de Productos</h2>
+  <div class="row">
+    <div class="col-12 col-sm-6 col-lg-4 mb-4" *ngFor="let producto of productos">
+      <div class="card h-100 shadow rounded-4">
+        <img 
+          [src]="producto.imagen" 
+          class="card-img-top p-3" 
+          alt="{{ producto.nombre }}" 
+          style="height: 250px; object-fit: contain;"
+        />
+        <div class="card-body text-center">
+          <h5 class="card-title">{{ producto.nombre }}</h5>
+          <p class="card-text">{{ producto.descripcion }}</p>
+          <p class="fw-bold text-dark">${{ producto.precio | number:'1.0-0' }}</p>
+          <button 
+            class="btn btn-pink text-white mt-2" 
+            (click)="agregarAlCarrito(producto)"
+          >
+            Agregar al carrito
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,33 @@
+.registro-container {
+  width: 100%;
+  padding: 1.5rem;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+@media (max-width: 575.98px) {
+  .registro-container {
+    padding: 1rem;
+  }
+}
+.form-group {
+  margin-bottom: 1rem;
+}
+.invalid-feedback { color: #dc3545; }
+button[disabled] { opacity: .6; cursor: not-allowed; }
+
+.text-pink {
+  color: #e91e63;
+}
+
+.btn-pink {
+  background-color: #e91e63;
+  color: white;
+  border: none;
+}
+
+.btn-pink:hover {
+  background-color: #d81b60;
+  color: white;
+}

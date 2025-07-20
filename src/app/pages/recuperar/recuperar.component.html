@@ -1,0 +1,42 @@
+<div class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-8 col-lg-4 recuperar-container">
+      <h2>Recuperar Contraseña</h2>
+
+  <form [formGroup]="recuperarForm" (ngSubmit)="onSubmit()" novalidate>
+    <div class="form-group mb-3">
+      <label for="emailRec">Email *</label>
+      <input id="emailRec" type="email" formControlName="email"
+        class="form-control"
+        [class.is-invalid]="recuperarForm.get('email')?.invalid && recuperarForm.get('email')?.touched"/>
+      <div class="invalid-feedback" *ngIf="recuperarForm.get('email')?.hasError('required')">
+        El correo es obligatorio.
+      </div>
+      <div class="invalid-feedback" *ngIf="recuperarForm.get('email')?.hasError('email')">
+        Formato de correo inválido.
+      </div>
+    </div>
+
+    <div class="form-group mb-3">
+      <label for="direccionDespachoRec">Dirección de despacho</label>
+      <input id="direccionDespachoRec" type="text" formControlName="direccionDespacho"
+        class="form-control"/>
+    </div>
+
+    <div class="mb-3">
+      <label for="fechaNacimientoRec" class="form-label text-dark">Fecha de nacimiento</label>
+      <input id="fechaNacimientoRec" type="date" formControlName="fechaNacimiento"
+        class="form-control"/>
+    </div>
+
+    <button type="submit" class="btn btn-primary w-100" [disabled]="recuperarForm.invalid">Enviar enlace</button>
+    <button type="button" class="btn btn-outline-dark w-100 mt-2" (click)="limpiar()">Limpiar</button>
+  </form>
+
+  <div class="alert alert-success mt-3" *ngIf="enviado">
+    ¡Revisa tu correo para recuperar tu contraseña!
+  </div>
+  <div class="alert alert-danger mt-3" *ngIf="error">{{ error }}</div>
+    </div>
+  </div>
+</div>

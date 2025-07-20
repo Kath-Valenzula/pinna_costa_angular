@@ -1,0 +1,24 @@
+.recuperar-container {
+  width: 100%;
+  padding: 1.5rem;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+@media (max-width: 575.98px) {
+  .recuperar-container {
+    padding: 1rem;
+  }
+}
+.form-group {
+  margin-bottom: 1rem;
+}
+.invalid-feedback { color: #dc3545; }
+button[disabled] { opacity: .6; cursor: not-allowed; }
+
+:host ::ng-deep .btn-primary {
+  background-color: #ff2f7b !important;
+  border-color:    #ff2f7b !important;
+  color:           #ffffff !important;
+}

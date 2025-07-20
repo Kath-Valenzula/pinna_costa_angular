@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "nombre": "Vestido Rosa Claro",
+    "precio": 12990,
+    "imagen": "assets/img/vestido-rosa.jpg",
+    "descripcion": "Elegante vestido rosa claro, perfecto para eventos formales y cócteles."
+  },
+  {
+    "id": 2,
+    "nombre": "Blazer Beige",
+    "precio": 17990,
+    "imagen": "assets/img/blazer-beige.jpg",
+    "descripcion": "Blazer beige de corte entallado, combina con cualquier outfit."
+  },
+  {
+    "id": 3,
+    "nombre": "Blusa de Encaje",
+    "precio": 8990,
+    "imagen": "assets/img/blusa-encaje.jpg",
+    "descripcion": "Blusa blanca de encaje fino, detalle romántico para tu look."
+  },
+  {
+    "id": 4,
+    "nombre": "Falda Midi Floral",
+    "precio": 10990,
+    "imagen": "assets/img/falda-midi.jpg",
+    "descripcion": "Falda midi con estampado floral, ideal para primavera y verano."
+  },
+  {
+    "id": 5,
+    "nombre": "Pantalón de Lino",
+    "precio": 11990,
+    "imagen": "assets/img/pantalon-lino.jpg",
+    "descripcion": "Pantalón de lino beige, frescura y comodidad para el día a día."
+  },
+  {
+    "id": 6,
+    "nombre": "Sombrero Elegante",
+    "precio": 6990,
+    "imagen": "assets/img/sombrero-elegante.jpg",
+    "descripcion": "Sombrero de ala ancha en tono natural, protege del sol con estilo."
+  }
+]

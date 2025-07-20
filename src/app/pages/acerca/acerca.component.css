@@ -1,0 +1,11 @@
+.acerca {
+  background: #f9f5f3;
+  color: #333;
+}
+.acerca .container {
+  max-width: 800px;
+}
+.acerca h1 {
+  color: #cc3366;
+  margin-bottom: 1rem;
+}

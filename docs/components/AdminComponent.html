@@ -1,0 +1,1509 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>pinna-costa documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">pinna-costa documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  AdminComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/pages/admin/admin.component.ts</code>
+</p>
+
+
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Componente del panel de administración para gestionar usuarios y productos.</p>
+
+    </p>
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-admin</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./admin.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./admin.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#productoForm" >productoForm</a>
+                            </li>
+                            <li>
+                                <a href="#productos" >productos</a>
+                            </li>
+                            <li>
+                                <a href="#usuario" >usuario</a>
+                            </li>
+                            <li>
+                                <a href="#usuarios" >usuarios</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#cargarProductos" >cargarProductos</a>
+                            </li>
+                            <li>
+                                <a href="#cargarUsuarios" >cargarUsuarios</a>
+                            </li>
+                            <li>
+                                <a href="#cerrarSesion" >cerrarSesion</a>
+                            </li>
+                            <li>
+                                <a href="#crearUsuario" >crearUsuario</a>
+                            </li>
+                            <li>
+                                <a href="#editarProducto" >editarProducto</a>
+                            </li>
+                            <li>
+                                <a href="#editarUsuario" >editarUsuario</a>
+                            </li>
+                            <li>
+                                <a href="#eliminarProducto" >eliminarProducto</a>
+                            </li>
+                            <li>
+                                <a href="#eliminarUsuario" >eliminarUsuario</a>
+                            </li>
+                            <li>
+                                <a href="#guardarProducto" >guardarProducto</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(router: Router, title: Title, meta: Meta, fb: FormBuilder)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/pages/admin/admin.component.ts:28</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Constructor que inyecta los servicios requeridos</p>
+</div>
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                    <code>Router</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <p>Servicio de rutas para navegación</p>
+
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>title</td>
+                                                  
+                                                        <td>
+                                                                    <code>Title</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <p>Servicio para actualizar el título del documento</p>
+
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>meta</td>
+                                                  
+                                                        <td>
+                                                                    <code>Meta</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <p>Servicio para modificar etiquetas meta</p>
+
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>fb</td>
+                                                  
+                                                        <td>
+                                                                    <code>FormBuilder</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <p>FormBuilder para crear formularios reactivos</p>
+
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cargarProductos"></a>
+                    <span class="name">
+                        <span ><b>cargarProductos</b></span>
+                        <a href="#cargarProductos"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>cargarProductos()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="77"
+                                    class="link-to-prism">src/app/pages/admin/admin.component.ts:77</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Carga la lista de productos desde localStorage</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cargarUsuarios"></a>
+                    <span class="name">
+                        <span ><b>cargarUsuarios</b></span>
+                        <a href="#cargarUsuarios"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>cargarUsuarios()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="69"
+                                    class="link-to-prism">src/app/pages/admin/admin.component.ts:69</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Carga la lista de usuarios desde localStorage</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cerrarSesion"></a>
+                    <span class="name">
+                        <span ><b>cerrarSesion</b></span>
+                        <a href="#cerrarSesion"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>cerrarSesion()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="155"
+                                    class="link-to-prism">src/app/pages/admin/admin.component.ts:155</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Elimina la sesión actual del administrador y recarga la aplicación</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="crearUsuario"></a>
+                    <span class="name">
+                        <span ><b>crearUsuario</b></span>
+                        <a href="#crearUsuario"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>crearUsuario()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="85"
+                                    class="link-to-prism">src/app/pages/admin/admin.component.ts:85</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Redirige al formulario de registro de usuario</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="editarProducto"></a>
+                    <span class="name">
+                        <span ><b>editarProducto</b></span>
+                        <a href="#editarProducto"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>editarProducto(producto: <a href="../interfaces/Producto.html" target="_self">Producto</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="112"
+                                    class="link-to-prism">src/app/pages/admin/admin.component.ts:112</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Carga los datos del producto seleccionado en el formulario</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>producto</td>
+                                            <td>
+                                                            <code><a href="../interfaces/Producto.html" target="_self" >Producto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Producto a editar</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="editarUsuario"></a>
+                    <span class="name">
+                        <span ><b>editarUsuario</b></span>
+                        <a href="#editarUsuario"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>editarUsuario(usuario: <a href="../interfaces/Usuario.html" target="_self">Usuario</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="93"
+                                    class="link-to-prism">src/app/pages/admin/admin.component.ts:93</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Muestra un mensaje para editar un usuario (acción simulada)</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>usuario</td>
+                                            <td>
+                                                            <code><a href="../interfaces/Usuario.html" target="_self" >Usuario</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Usuario que se desea editar</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="eliminarProducto"></a>
+                    <span class="name">
+                        <span ><b>eliminarProducto</b></span>
+                        <a href="#eliminarProducto"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>eliminarProducto(producto: <a href="../interfaces/Producto.html" target="_self">Producto</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="120"
+                                    class="link-to-prism">src/app/pages/admin/admin.component.ts:120</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Elimina un producto de la lista tras confirmación</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>producto</td>
+                                            <td>
+                                                            <code><a href="../interfaces/Producto.html" target="_self" >Producto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Producto a eliminar</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="eliminarUsuario"></a>
+                    <span class="name">
+                        <span ><b>eliminarUsuario</b></span>
+                        <a href="#eliminarUsuario"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>eliminarUsuario(usuario: <a href="../interfaces/Usuario.html" target="_self">Usuario</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="101"
+                                    class="link-to-prism">src/app/pages/admin/admin.component.ts:101</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Elimina un usuario de la lista tras confirmación</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>usuario</td>
+                                            <td>
+                                                            <code><a href="../interfaces/Usuario.html" target="_self" >Usuario</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Usuario a eliminar</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="guardarProducto"></a>
+                    <span class="name">
+                        <span ><b>guardarProducto</b></span>
+                        <a href="#guardarProducto"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>guardarProducto()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="130"
+                                    class="link-to-prism">src/app/pages/admin/admin.component.ts:130</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Guarda un producto nuevo o editado en localStorage</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="47"
+                                    class="link-to-prism">src/app/pages/admin/admin.component.ts:47</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Inicializa el componente cargando usuarios y productos, y configurando el formulario</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="productoForm"></a>
+                    <span class="name">
+                        <span ><b>productoForm</b></span>
+                        <a href="#productoForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>FormGroup</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/pages/admin/admin.component.ts:28</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Formulario reactivo para agregar o editar productos</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="productos"></a>
+                    <span class="name">
+                        <span ><b>productos</b></span>
+                        <a href="#productos"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/Producto.html" target="_self" >Producto[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/pages/admin/admin.component.ts:25</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Listado de productos disponibles</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="usuario"></a>
+                    <span class="name">
+                        <span ><b>usuario</b></span>
+                        <a href="#usuario"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/Usuario.html" target="_self" >Usuario</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/pages/admin/admin.component.ts:19</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Usuario autenticado en el panel</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="usuarios"></a>
+                    <span class="name">
+                        <span ><b>usuarios</b></span>
+                        <a href="#usuarios"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Usuario[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/pages/admin/admin.component.ts:22</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Lista de usuarios registrados</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { Title, Meta } from &#x27;@angular/platform-browser&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
+import { FormBuilder, FormGroup, Validators } from &#x27;@angular/forms&#x27;;
+import { Usuario } from &#x27;../../models/usuario.model&#x27;;
+import { Producto } from &#x27;../../models/producto.model&#x27;;
+
+/**
+ * Componente del panel de administración para gestionar usuarios y productos.
+ */
+@Component({
+  selector: &#x27;app-admin&#x27;,
+  templateUrl: &#x27;./admin.component.html&#x27;,
+  styleUrls: [&#x27;./admin.component.css&#x27;]
+})
+export class AdminComponent implements OnInit {
+
+  /** Usuario autenticado en el panel */
+  usuario!: Usuario;
+
+  /** Lista de usuarios registrados */
+  usuarios: Usuario[] &#x3D; [];
+
+  /** Listado de productos disponibles */
+  productos: Producto[] &#x3D; [];
+
+  /** Formulario reactivo para agregar o editar productos */
+  productoForm!: FormGroup;
+
+  /**
+   * Constructor que inyecta los servicios requeridos
+   * @param router Servicio de rutas para navegación
+   * @param title Servicio para actualizar el título del documento
+   * @param meta Servicio para modificar etiquetas meta
+   * @param fb FormBuilder para crear formularios reactivos
+   */
+  constructor(
+    private router: Router,
+    private title: Title,
+    private meta: Meta,
+    private fb: FormBuilder
+  ) {}
+
+  /**
+   * Inicializa el componente cargando usuarios y productos, y configurando el formulario
+   */
+  ngOnInit(): void {
+    this.title.setTitle(&#x27;Admin - Piña Costa&#x27;);
+    this.meta.updateTag({
+      name: &#x27;description&#x27;,
+      content: &#x27;Panel de administración de Piña Costa.&#x27;
+    });
+
+    this.usuario &#x3D; JSON.parse(localStorage.getItem(&#x27;usuario&#x27;) || &#x27;{}&#x27;);
+    this.productoForm &#x3D; this.fb.group({
+      id: [null],
+      nombre: [&#x27;&#x27;, Validators.required],
+      imagen: [&#x27;&#x27;],
+      descripcion: [&#x27;&#x27;],
+      precio: [null, Validators.required]
+    });
+    this.cargarUsuarios();
+    this.cargarProductos();
+  }
+
+  /**
+   * Carga la lista de usuarios desde localStorage
+   */
+  cargarUsuarios(): void {
+    const data &#x3D; localStorage.getItem(&#x27;usuarios&#x27;);
+    this.usuarios &#x3D; data ? JSON.parse(data) : [];
+  }
+
+  /**
+   * Carga la lista de productos desde localStorage
+   */
+  cargarProductos(): void {
+    const data &#x3D; localStorage.getItem(&#x27;productos&#x27;);
+    this.productos &#x3D; data ? JSON.parse(data) : [];
+  }
+
+  /**
+   * Redirige al formulario de registro de usuario
+   */
+  crearUsuario(): void {
+    this.router.navigate([&#x27;/registro&#x27;]);
+  }
+
+  /**
+   * Muestra un mensaje para editar un usuario (acción simulada)
+   * @param usuario Usuario que se desea editar
+   */
+  editarUsuario(usuario: Usuario): void {
+    alert(&#x60;Editar usuario: ${usuario.nombre}&#x60;);
+  }
+
+  /**
+   * Elimina un usuario de la lista tras confirmación
+   * @param usuario Usuario a eliminar
+   */
+  eliminarUsuario(usuario: Usuario): void {
+    if (confirm(&#x60;¿Eliminar a ${usuario.nombre}?&#x60;)) {
+      this.usuarios &#x3D; this.usuarios.filter(u &#x3D;&gt; u.id !&#x3D;&#x3D; usuario.id);
+      localStorage.setItem(&#x27;usuarios&#x27;, JSON.stringify(this.usuarios));
+    }
+  }
+
+  /**
+   * Carga los datos del producto seleccionado en el formulario
+   * @param producto Producto a editar
+   */
+  editarProducto(producto: Producto): void {
+    this.productoForm.patchValue(producto);
+  }
+
+  /**
+   * Elimina un producto de la lista tras confirmación
+   * @param producto Producto a eliminar
+   */
+  eliminarProducto(producto: Producto): void {
+    if (confirm(&#x60;¿Eliminar producto &quot;${producto.nombre}&quot;?&#x60;)) {
+      this.productos &#x3D; this.productos.filter(p &#x3D;&gt; p.id !&#x3D;&#x3D; producto.id);
+      localStorage.setItem(&#x27;productos&#x27;, JSON.stringify(this.productos));
+    }
+  }
+
+  /**
+   * Guarda un producto nuevo o editado en localStorage
+   */
+  guardarProducto(): void {
+    if (this.productoForm.invalid) {
+      this.productoForm.markAllAsTouched();
+      return;
+    }
+
+    const data &#x3D; this.productoForm.value;
+
+    if (data.id) {
+      const idx &#x3D; this.productos.findIndex(p &#x3D;&gt; p.id &#x3D;&#x3D;&#x3D; data.id);
+      if (idx !&#x3D;&#x3D; -1) this.productos[idx] &#x3D; { ...data };
+    } else {
+      const nuevoId &#x3D; this.productos.length
+        ? Math.max(...this.productos.map(p &#x3D;&gt; p.id)) + 1
+        : 1;
+      this.productos.push({ ...data, id: nuevoId });
+    }
+
+    localStorage.setItem(&#x27;productos&#x27;, JSON.stringify(this.productos));
+    this.productoForm.reset({ id: null, nombre: &#x27;&#x27;, imagen: &#x27;&#x27;, descripcion: &#x27;&#x27;, precio: null });
+  }
+
+  /**
+   * Elimina la sesión actual del administrador y recarga la aplicación
+   */
+  cerrarSesion(): void {
+    localStorage.removeItem(&#x27;usuario&#x27;);
+    this.router.navigate([&#x27;/login&#x27;]).then(() &#x3D;&gt; {
+      window.location.reload();
+    });
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;container mt-5&quot;&gt;
+  &lt;!-- Botón cerrar sesión --&gt;
+  &lt;div class&#x3D;&quot;text-end mb-4&quot;&gt;
+    &lt;button class&#x3D;&quot;btn btn-outline-dark&quot; (click)&#x3D;&quot;cerrarSesion()&quot;&gt;
+      Cerrar sesión
+    &lt;/button&gt;
+  &lt;/div&gt;
+
+  &lt;h2 class&#x3D;&quot;text-center mb-4&quot;&gt;Panel de Administración - Piña Costa&lt;/h2&gt;
+
+  &lt;div class&#x3D;&quot;card mb-4&quot;&gt;
+    &lt;div class&#x3D;&quot;card-header btn-pink text-white&quot;&gt;Agregar o Editar Producto&lt;/div&gt;
+    &lt;div class&#x3D;&quot;card-body&quot;&gt;
+      &lt;form [formGroup]&#x3D;&quot;productoForm&quot; (ngSubmit)&#x3D;&quot;guardarProducto()&quot;&gt;
+        &lt;div class&#x3D;&quot;mb-3&quot;&gt;
+          &lt;label for&#x3D;&quot;nombre&quot; class&#x3D;&quot;form-label&quot;&gt;Nombre&lt;/label&gt;
+          &lt;input
+            id&#x3D;&quot;nombre&quot;
+            type&#x3D;&quot;text&quot;
+            formControlName&#x3D;&quot;nombre&quot;
+            class&#x3D;&quot;form-control&quot;
+            [class.is-invalid]&#x3D;&quot;productoForm.get(&#x27;nombre&#x27;)?.invalid &amp;&amp; productoForm.get(&#x27;nombre&#x27;)?.touched&quot;
+          /&gt;
+          &lt;div class&#x3D;&quot;invalid-feedback&quot; *ngIf&#x3D;&quot;productoForm.get(&#x27;nombre&#x27;)?.hasError(&#x27;required&#x27;)&quot;&gt;
+            El nombre es obligatorio.
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;mb-3&quot;&gt;
+          &lt;label for&#x3D;&quot;imagen&quot; class&#x3D;&quot;form-label&quot;&gt;URL de Imagen&lt;/label&gt;
+          &lt;input
+            id&#x3D;&quot;imagen&quot;
+            type&#x3D;&quot;text&quot;
+            formControlName&#x3D;&quot;imagen&quot;
+            class&#x3D;&quot;form-control&quot;
+          /&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;mb-3&quot;&gt;
+          &lt;label for&#x3D;&quot;descripcion&quot; class&#x3D;&quot;form-label&quot;&gt;Descripción&lt;/label&gt;
+          &lt;textarea
+            id&#x3D;&quot;descripcion&quot;
+            formControlName&#x3D;&quot;descripcion&quot;
+            class&#x3D;&quot;form-control&quot;
+          &gt;&lt;/textarea&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;mb-3&quot;&gt;
+          &lt;label for&#x3D;&quot;precio&quot; class&#x3D;&quot;form-label&quot;&gt;Precio&lt;/label&gt;
+          &lt;input
+            id&#x3D;&quot;precio&quot;
+            type&#x3D;&quot;number&quot;
+            formControlName&#x3D;&quot;precio&quot;
+            class&#x3D;&quot;form-control&quot;
+            [class.is-invalid]&#x3D;&quot;productoForm.get(&#x27;precio&#x27;)?.invalid &amp;&amp; productoForm.get(&#x27;precio&#x27;)?.touched&quot;
+          /&gt;
+          &lt;div class&#x3D;&quot;invalid-feedback&quot; *ngIf&#x3D;&quot;productoForm.get(&#x27;precio&#x27;)?.hasError(&#x27;required&#x27;)&quot;&gt;
+            El precio es obligatorio.
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;button type&#x3D;&quot;submit&quot; class&#x3D;&quot;btn btn-pink w-100&quot; [disabled]&#x3D;&quot;productoForm.invalid&quot;&gt; 
+          Guardar Producto
+        &lt;/button&gt;
+      &lt;/form&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;h4 class&#x3D;&quot;text-center mt-4&quot;&gt;Lista de Productos&lt;/h4&gt;
+  &lt;div class&#x3D;&quot;row&quot;&gt;
+    &lt;div class&#x3D;&quot;col-12 col-sm-6 col-lg-4 mb-3&quot; *ngFor&#x3D;&quot;let p of productos&quot;&gt;
+      &lt;div class&#x3D;&quot;card h-100&quot;&gt;
+        &lt;img [src]&#x3D;&quot;p.imagen&quot; class&#x3D;&quot;card-img-top&quot; [alt]&#x3D;&quot;p.nombre&quot; /&gt;
+        &lt;div class&#x3D;&quot;card-body d-flex flex-column&quot;&gt;
+          &lt;h5 class&#x3D;&quot;card-title&quot;&gt;{{ p.nombre }}&lt;/h5&gt;
+          &lt;p class&#x3D;&quot;card-text&quot;&gt;{{ p.descripcion }}&lt;/p&gt;
+          &lt;p class&#x3D;&quot;card-text fw-bold&quot;&gt;
+            ${{ p.precio | number:&#x27;1.0-0&#x27; }}
+          &lt;/p&gt;
+          &lt;button
+            class&#x3D;&quot;btn btn-outline-pink w-100 mb-2 mt-auto&quot;
+            (click)&#x3D;&quot;editarProducto(p)&quot;
+          &gt;
+            Editar
+          &lt;/button&gt;
+          &lt;button
+            class&#x3D;&quot;btn btn-danger w-100&quot;
+            (click)&#x3D;&quot;eliminarProducto(p)&quot;
+          &gt;
+            Eliminar
+          &lt;/button&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;h4 class&#x3D;&quot;text-center mt-5&quot;&gt;Usuarios Registrados&lt;/h4&gt;
+  &lt;div class&#x3D;&quot;table-responsive&quot;&gt;
+    &lt;table class&#x3D;&quot;table table-bordered table-hover align-middle text-center&quot;&gt;
+      &lt;thead class&#x3D;&quot;bg-pink text-white&quot;&gt;
+        &lt;tr&gt;
+          &lt;th&gt;Nombre&lt;/th&gt;
+          &lt;th&gt;Correo&lt;/th&gt;
+          &lt;th&gt;Rol&lt;/th&gt;
+          &lt;th&gt;Acciones&lt;/th&gt;
+        &lt;/tr&gt;
+      &lt;/thead&gt;
+      &lt;tbody&gt;
+        &lt;tr *ngFor&#x3D;&quot;let u of usuarios&quot;&gt;
+          &lt;td&gt;{{ u.nombre }}&lt;/td&gt;
+          &lt;td&gt;{{ u.email }}&lt;/td&gt;
+          &lt;td&gt;{{ u.rol || &#x27;usuario&#x27; }}&lt;/td&gt;
+          &lt;td&gt;
+            &lt;button
+              class&#x3D;&quot;btn btn-outline-pink btn-sm me-1&quot;
+              (click)&#x3D;&quot;editarUsuario(u)&quot;
+            &gt;
+              Editar
+            &lt;/button&gt;
+            &lt;button
+              class&#x3D;&quot;btn btn-danger btn-sm&quot;
+              (click)&#x3D;&quot;eliminarUsuario(u)&quot;
+            &gt;
+              Eliminar
+            &lt;/button&gt;
+          &lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/div&gt;
+
+  &lt;div class&#x3D;&quot;text-center mt-3&quot;&gt;
+    &lt;button class&#x3D;&quot;btn btn-pink&quot; (click)&#x3D;&quot;crearUsuario()&quot;&gt;
+      Crear Usuario
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./admin.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.text-rosado {
+  color: #d63384;
+}
+
+.btn-rosado {
+  background-color: #d63384;
+  color: white;
+  border: none;
+}
+
+.btn-rosado:hover {
+  background-color: #c2185b;
+}
+
+.is-invalid {
+  border: 1px solid #dc3545;
+}
+
+.invalid-feedback {
+  color: #dc3545;
+  font-size: 0.875em;
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="container mt-5">  <!-- Botón cerrar sesión -->  <div class="text-end mb-4">    <button class="btn btn-outline-dark" (click)="cerrarSesion()">      Cerrar sesión    </button>  </div>  <h2 class="text-center mb-4">Panel de Administración - Piña Costa</h2>  <div class="card mb-4">    <div class="card-header btn-pink text-white">Agregar o Editar Producto</div>    <div class="card-body">      <form [formGroup]="productoForm" (ngSubmit)="guardarProducto()">        <div class="mb-3">          <label for="nombre" class="form-label">Nombre</label>          <input            id="nombre"            type="text"            formControlName="nombre"            class="form-control"            [class.is-invalid]="productoForm.get(\'nombre\')?.invalid && productoForm.get(\'nombre\')?.touched"          />          <div class="invalid-feedback" *ngIf="productoForm.get(\'nombre\')?.hasError(\'required\')">            El nombre es obligatorio.          </div>        </div>        <div class="mb-3">          <label for="imagen" class="form-label">URL de Imagen</label>          <input            id="imagen"            type="text"            formControlName="imagen"            class="form-control"          />        </div>        <div class="mb-3">          <label for="descripcion" class="form-label">Descripción</label>          <textarea            id="descripcion"            formControlName="descripcion"            class="form-control"          ></textarea>        </div>        <div class="mb-3">          <label for="precio" class="form-label">Precio</label>          <input            id="precio"            type="number"            formControlName="precio"            class="form-control"            [class.is-invalid]="productoForm.get(\'precio\')?.invalid && productoForm.get(\'precio\')?.touched"          />          <div class="invalid-feedback" *ngIf="productoForm.get(\'precio\')?.hasError(\'required\')">            El precio es obligatorio.          </div>        </div>        <button type="submit" class="btn btn-pink w-100" [disabled]="productoForm.invalid">           Guardar Producto        </button>      </form>    </div>  </div>  <h4 class="text-center mt-4">Lista de Productos</h4>  <div class="row">    <div class="col-12 col-sm-6 col-lg-4 mb-3" *ngFor="let p of productos">      <div class="card h-100">        <img [src]="p.imagen" class="card-img-top" [alt]="p.nombre" />        <div class="card-body d-flex flex-column">          <h5 class="card-title">{{ p.nombre }}</h5>          <p class="card-text">{{ p.descripcion }}</p>          <p class="card-text fw-bold">            ${{ p.precio | number:\'1.0-0\' }}          </p>          <button            class="btn btn-outline-pink w-100 mb-2 mt-auto"            (click)="editarProducto(p)"          >            Editar          </button>          <button            class="btn btn-danger w-100"            (click)="eliminarProducto(p)"          >            Eliminar          </button>        </div>      </div>    </div>  </div>  <h4 class="text-center mt-5">Usuarios Registrados</h4>  <div class="table-responsive">    <table class="table table-bordered table-hover align-middle text-center">      <thead class="bg-pink text-white">        <tr>          <th>Nombre</th>          <th>Correo</th>          <th>Rol</th>          <th>Acciones</th>        </tr>      </thead>      <tbody>        <tr *ngFor="let u of usuarios">          <td>{{ u.nombre }}</td>          <td>{{ u.email }}</td>          <td>{{ u.rol || \'usuario\' }}</td>          <td>            <button              class="btn btn-outline-pink btn-sm me-1"              (click)="editarUsuario(u)"            >              Editar            </button>            <button              class="btn btn-danger btn-sm"              (click)="eliminarUsuario(u)"            >              Eliminar            </button>          </td>        </tr>      </tbody>    </table>  </div>  <div class="text-center mt-3">    <button class="btn btn-pink" (click)="crearUsuario()">      Crear Usuario    </button>  </div></div></div>'
+    var COMPONENTS = [{'name': 'AcercaComponent', 'selector': 'app-acerca'},{'name': 'AdminComponent', 'selector': 'app-admin'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CartComponent', 'selector': 'app-cart'},{'name': 'CatalogoComponent', 'selector': 'app-catalogo'},{'name': 'ContactoComponent', 'selector': 'app-contacto'},{'name': 'CreateUserComponent', 'selector': 'app-create-user'},{'name': 'EncargosComponent', 'selector': 'app-encargos'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'ListaEncargosComponent', 'selector': 'app-lista-encargos'},{'name': 'ListaProductosComponent', 'selector': 'app-lista-productos'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'PerfilComponent', 'selector': 'app-perfil'},{'name': 'ProductoDetalleComponent', 'selector': 'app-producto-detalle'},{'name': 'RecuperarComponent', 'selector': 'app-recuperar'},{'name': 'RegistroComponent', 'selector': 'app-registro'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'AdminComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'AdminComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

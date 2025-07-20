@@ -1,0 +1,16 @@
+# Dependencias de Node
+node_modules/
+
+# Carpeta de distribución
+dist/
+
+# Salidas de Angular
+.angular/
+
+# Ajustes de editor (opcional)
+.vscode/
+.idea/
+
+# Documentation and coverage
+documentation/
+coverage/

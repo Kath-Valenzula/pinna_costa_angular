@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "nombre": "Encargo Personalizado 1",
+    "descripcion": "Descripción del encargo 1.",
+    "precio": 25990
+  },
+  {
+    "id": 2,
+    "nombre": "Encargo Personalizado 2",
+    "descripcion": "Descripción del encargo 2.",
+    "precio": 34990
+  }
+]

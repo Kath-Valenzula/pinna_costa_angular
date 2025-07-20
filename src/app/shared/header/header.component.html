@@ -1,0 +1,93 @@
+<header class="navbar navbar-expand-lg navbar-light bg-light shadow">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="/">
+      <img src="assets/img/logo.jpg" alt="Piña Costa" class="logo-img" />
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav align-items-center">
+        <li
+          class="nav-item"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          <a routerLink="/" class="nav-link">Inicio</a>
+        </li>
+        <li class="nav-item" routerLinkActive="active">
+          <a routerLink="/acerca" class="nav-link">Acerca de</a>
+        </li>
+        <li class="nav-item" routerLinkActive="active">
+          <a routerLink="/catalogo" class="nav-link">Catálogo</a>
+        </li>
+
+        
+        <li class="nav-item position-relative" routerLinkActive="active">
+          <a routerLink="/cart" class="nav-link">
+            <i class="bi bi-cart-fill"></i> Carrito
+            <span
+              class="badge bg-danger position-absolute top-0 start-100 translate-middle"
+            >
+              {{ cantidad }}
+            </span>
+          </a>
+        </li>
+
+      
+        <ng-container *ngIf="estaAutenticado">
+          <li class="nav-item dropdown">
+            <button
+              class="nav-link dropdown-toggle btn btn-outline-pink ms-2"
+              id="perfilDropdown"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+              type="button"
+            >
+              {{ nombreUsuario }}
+            </button>
+            <ul
+              class="dropdown-menu dropdown-menu-end"
+              aria-labelledby="perfilDropdown"
+            >
+              <li>
+                <a class="dropdown-item" [routerLink]="rutaPerfil">
+                  Mi perfil
+                </a>
+              </li>
+              <li><hr class="dropdown-divider" /></li>
+              <li>
+                <button
+                  class="dropdown-item text-danger"
+                  type="button"
+                  (click)="cerrarSesion()"
+                >
+                  Cerrar sesión
+                </button>
+              </li>
+            </ul>
+          </li>
+        </ng-container>
+
+       
+        <ng-container *ngIf="!estaAutenticado">
+          <li class="nav-item">
+            <button
+              class="btn btn-outline-pink ms-2"
+              type="button"
+              (click)="irALogin()"
+            >
+              Ingresar
+            </button>
+          </li>
+        </ng-container>
+      </ul>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,17 @@
+<div class="container py-5">
+  <div *ngIf="producto" class="row">
+    <div class="col-12 col-md-6">
+      <img [src]="producto.imagen" [alt]="producto.nombre" class="img-fluid rounded shadow-sm" />
+    </div>
+    <div class="col-12 col-md-6">
+      <h2 class="mb-3">{{ producto.nombre }}</h2>
+      <p class="text-muted">{{ producto.descripcion }}</p>
+      <h4 class="text-dark mb-4">${{ producto.precio }}</h4>
+      <button class="btn btn-pink" (click)="agregarAlCarrito()">Agregar al Carrito 🛒</button>
+    </div>
+  </div>
+
+  <div *ngIf="!producto" class="alert alert-info mt-5">
+    Cargando información del producto...
+  </div>
+</div>

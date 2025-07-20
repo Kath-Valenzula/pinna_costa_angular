@@ -1,0 +1,18 @@
+<div class="container mt-4">
+    <h2>Encargos Personalizados</h2>
+    <div class="row">
+        <div class="col-md-4 mb-3" *ngFor="let encargo of encargos">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title">{{ encargo.nombre }}</h5>
+                    <p class="card-text">{{ encargo.descripcion }}</p>
+                </div>
+                <div class="card-footer">
+                    <strong>
+                        {{ encargo.precio | currency:'CLP':'symbol':'1.0-0' }}
+                    </strong>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

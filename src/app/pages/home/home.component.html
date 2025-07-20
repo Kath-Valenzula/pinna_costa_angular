@@ -1,0 +1,29 @@
+<div class="hero"></div>
+<section class="acerca seccion">
+  <div class="container-fluid py-5">
+    <h1>Acerca de Piña Costa</h1>
+    <p>Somos una tienda dedicada a la moda femenina en tonos rosa, comprometidos con ofrecer prendas de la más alta calidad y estilo.</p>
+    <p>Nuestro proyecto nació como una propuesta de e-commerce para Duoc UC, migrando desde HTML/CSS/Bootstrap clásico a una SPA Angular 16.</p>
+    <img src="assets/img/tienda-acerca.jpg" alt="Nuestra tienda" class="img-fluid rounded">
+  </div>
+</section>
+<div class="container-fluid py-5">
+  <h2 class="mb-4">Productos Destacados</h2>
+  <div class="row">
+    <div *ngFor="let p of productos" class="col-12 col-sm-6 col-lg-4 mb-3">
+      <div class="card">
+        <img [src]="p.imagen" class="card-img-top" alt="{{ p.nombre }}">
+        <div class="card-body">
+          <h5 class="card-title">{{ p.nombre }}</h5>
+          <p class="card-text">${{ p.precio }}</p>
+          <a 
+            [routerLink]="['/producto', p.id]" 
+            class="btn btn-pink text-white"
+          >
+            Ver detalle
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

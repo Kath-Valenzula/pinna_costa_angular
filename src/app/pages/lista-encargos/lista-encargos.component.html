@@ -1,0 +1,71 @@
+<div class="container py-4">
+  <h2>Encargos</h2>
+
+  <form #encargoForm="ngForm" (ngSubmit)="editando ? actualizar(encargoForm) : agregar(encargoForm)" class="mb-3">
+    <div class="row g-2">
+      <div class="col-sm">
+        <input
+          class="form-control"
+          name="nombre"
+          [ngModel]="editando ? editando.nombre : nuevo.nombre"
+          (ngModelChange)="actualizarCampo('nombre', $event)"
+          placeholder="Nombre"
+          required
+        />
+      </div>
+      <div class="col-sm">
+        <input
+          class="form-control"
+          name="descripcion"
+          [ngModel]="editando ? editando.descripcion : nuevo.descripcion"
+          (ngModelChange)="actualizarCampo('descripcion', $event)"
+          placeholder="Descripción"
+          required
+        />
+      </div>
+      <div class="col-sm">
+        <input
+          type="number"
+          class="form-control"
+          name="precio"
+          [ngModel]="editando ? editando.precio : nuevo.precio"
+          (ngModelChange)="actualizarCampo('precio', $event)"
+          placeholder="Precio"
+          required
+        />
+      </div>
+      <div class="col-auto">
+        <button type="submit" class="btn btn-primary">{{ editando ? 'Actualizar' : 'Agregar' }}</button>
+        <button *ngIf="editando" type="button" class="btn btn-secondary ms-2" (click)="cancelar()">Cancelar</button>
+      </div>
+    </div>
+  </form>
+
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Descripción</th>
+        <th>Precio</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let e of encargos">
+        <td>{{ e.id }}</td>
+        <td>{{ e.nombre }}</td>
+        <td>{{ e.descripcion }}</td>
+        <td>{{ e.precio | currency:'CLP' }}</td>
+                <td>
+          <button class="btn btn-outline-primary btn-sm me-1" (click)="editar(e)">
+            Editar
+          </button>
+          <button class="btn btn-danger btn-sm" (click)="eliminar(e.id)">
+            Eliminar
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

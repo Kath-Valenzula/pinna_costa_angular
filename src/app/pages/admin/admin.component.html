@@ -1,0 +1,133 @@
+<div class="container mt-5">
+  <!-- Botón cerrar sesión -->
+  <div class="text-end mb-4">
+    <button class="btn btn-outline-dark" (click)="cerrarSesion()">
+      Cerrar sesión
+    </button>
+  </div>
+
+  <h2 class="text-center mb-4">Panel de Administración - Piña Costa</h2>
+
+  <div class="card mb-4">
+    <div class="card-header btn-pink text-white">Agregar o Editar Producto</div>
+    <div class="card-body">
+      <form [formGroup]="productoForm" (ngSubmit)="guardarProducto()">
+        <div class="mb-3">
+          <label for="nombre" class="form-label">Nombre</label>
+          <input
+            id="nombre"
+            type="text"
+            formControlName="nombre"
+            class="form-control"
+            [class.is-invalid]="productoForm.get('nombre')?.invalid && productoForm.get('nombre')?.touched"
+          />
+          <div class="invalid-feedback" *ngIf="productoForm.get('nombre')?.hasError('required')">
+            El nombre es obligatorio.
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="imagen" class="form-label">URL de Imagen</label>
+          <input
+            id="imagen"
+            type="text"
+            formControlName="imagen"
+            class="form-control"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="descripcion" class="form-label">Descripción</label>
+          <textarea
+            id="descripcion"
+            formControlName="descripcion"
+            class="form-control"
+          ></textarea>
+        </div>
+        <div class="mb-3">
+          <label for="precio" class="form-label">Precio</label>
+          <input
+            id="precio"
+            type="number"
+            formControlName="precio"
+            class="form-control"
+            [class.is-invalid]="productoForm.get('precio')?.invalid && productoForm.get('precio')?.touched"
+          />
+          <div class="invalid-feedback" *ngIf="productoForm.get('precio')?.hasError('required')">
+            El precio es obligatorio.
+          </div>
+        </div>
+        <button type="submit" class="btn btn-pink w-100" [disabled]="productoForm.invalid"> 
+          Guardar Producto
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <h4 class="text-center mt-4">Lista de Productos</h4>
+  <div class="row">
+    <div class="col-12 col-sm-6 col-lg-4 mb-3" *ngFor="let p of productos">
+      <div class="card h-100">
+        <img [src]="p.imagen" class="card-img-top" [alt]="p.nombre" />
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">{{ p.nombre }}</h5>
+          <p class="card-text">{{ p.descripcion }}</p>
+          <p class="card-text fw-bold">
+            ${{ p.precio | number:'1.0-0' }}
+          </p>
+          <button
+            class="btn btn-outline-pink w-100 mb-2 mt-auto"
+            (click)="editarProducto(p)"
+          >
+            Editar
+          </button>
+          <button
+            class="btn btn-danger w-100"
+            (click)="eliminarProducto(p)"
+          >
+            Eliminar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h4 class="text-center mt-5">Usuarios Registrados</h4>
+  <div class="table-responsive">
+    <table class="table table-bordered table-hover align-middle text-center">
+      <thead class="bg-pink text-white">
+        <tr>
+          <th>Nombre</th>
+          <th>Correo</th>
+          <th>Rol</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let u of usuarios">
+          <td>{{ u.nombre }}</td>
+          <td>{{ u.email }}</td>
+          <td>{{ u.rol || 'usuario' }}</td>
+          <td>
+            <button
+              class="btn btn-outline-pink btn-sm me-1"
+              (click)="editarUsuario(u)"
+            >
+              Editar
+            </button>
+            <button
+              class="btn btn-danger btn-sm"
+              (click)="eliminarUsuario(u)"
+            >
+              Eliminar
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="text-center mt-3">
+    <button class="btn btn-pink" (click)="crearUsuario()">
+      Crear Usuario
+    </button>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+.text-rosado {
+  color: #d63384;
+}
+
+.btn-rosado {
+  background-color: #d63384;
+  color: white;
+  border: none;
+}
+
+.btn-rosado:hover {
+  background-color: #c2185b;
+}
+
+.is-invalid {
+  border: 1px solid #dc3545;
+}
+
+.invalid-feedback {
+  color: #dc3545;
+  font-size: 0.875em;
+}

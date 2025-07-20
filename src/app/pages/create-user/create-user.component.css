@@ -1,0 +1,13 @@
+.text-rosado {
+  color: #d63384;
+}
+
+.btn-rosado {
+  background-color: #d63384;
+  color: white;
+  border: none;
+}
+
+.btn-rosado:hover {
+  background-color: #c2185b;
+}
