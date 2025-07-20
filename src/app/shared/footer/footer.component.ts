@@ -14,12 +14,6 @@ export class FooterComponent {
   currentYear: number = new Date().getFullYear();
 
   /**
-   * Constructor del componente.
-   * No requiere dependencias.
-   */
-  constructor() {}
-
-  /**
    * Abre un enlace externo en una nueva pestaña del navegador.
    * @param url URL a abrir
    */
