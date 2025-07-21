@@ -84,136 +84,83 @@
 
 <h1>PinnaCosta</h1>
 <p><a href="https://github.com/Kath-Valenzula/pina_costa_angular/actions/workflows/ci.yml"><img src="https://github.com/Kath-Valenzula/pina_costa_angular/actions/workflows/ci.yml/badge.svg" alt="CI" class="img-responsive"></a></p>
-<p> <strong>Tienda online</strong> creada con <strong>Angular 16</strong> para el ramo de Programación. Muestra productos de moda femenina, carrito de compras y cuenta de usuario con formularios reactivos y validaciones.</p>
-<hr>
-<h2>Características principales</h2>
+<p>Tienda en línea desarrollada con <strong>Angular 16</strong>. Permite navegar productos de moda femenina, gestionar un carrito de compras y utilizar formularios reactivos para autenticación y administración.</p>
+<h2>Tabla de contenidos</h2>
 <ul>
-<li><strong>Catálogo de productos</strong> con imágenes, descripción y precio.</li>
-<li><strong>Carrito de compras</strong>: añade/quita productos y muestra contador en el header.</li>
-<li><strong>Autenticación simulada</strong>  <ul>
-<li><strong>Admin</strong> (<code>admin@example.com</code> / <code>Admin#123</code>): acceso a panel de administración.</li>
-<li><strong>Usuario</strong> (<code>user@example.com</code> / <code>User#123</code>): acceso a su perfil.</li>
+<li><a href="#caracter%C3%ADsticas">Características</a></li>
+<li><a href="#instalaci%C3%B3n">Instalación</a></li>
+<li><a href="#datos-de-ejemplo">Datos de ejemplo</a></li>
+<li><a href="#estructura-del-proyecto">Estructura del proyecto</a></li>
+<li><a href="#scripts-disponibles">Scripts disponibles</a></li>
+<li><a href="#pruebas">Pruebas</a></li>
+<li><a href="#documentaci%C3%B3n">Documentación</a></li>
+<li><a href="#despliegue">Despliegue</a></li>
+<li><a href="#docker">Docker</a></li>
 </ul>
-</li>
-<li><strong>Formularios Reactivos</strong> con validaciones:<ul>
-<li>Todos los campos “obligatorios” usan <code>Validators.required</code>.</li>
-<li>Email con <code>Validators.email</code>.</li>
-<li>Contraseña con patrón (6–18 car., 1 mayúscula, 1 dígito).</li>
-<li>Comparación password ↔ confirmPassword.</li>
-<li>Fecha de nacimiento con validador mínimo 13 años.</li>
-<li>Botones <strong>Crear</strong> / <strong>Enviar</strong> y <strong>Limpiar</strong> (<code>form.reset()</code>).</li>
+<h2>Características</h2>
+<ul>
+<li>Catálogo de productos con imágenes y precios.</li>
+<li>Carrito de compras con contador en el encabezado.</li>
+<li>Autenticación simulada con roles <strong>Admin</strong> (<code>admin@example.com</code> / <code>Admin#123</code>) y <strong>Usuario</strong> (<code>user@example.com</code> / <code>User#123</code>).</li>
+<li>Formularios reactivos con validaciones (email, contraseña, confirmación, fecha mínima, etc.).</li>
+<li>Pruebas unitarias con Jasmine y Karma.</li>
 </ul>
-</li>
-<li><strong>Pruebas unitarias</strong> (Jasmine + Karma) cubriendo validadores y onSubmit().</li>
-</ul>
-<hr>
 <h2>Instalación</h2>
 <ol>
-<li>Clona el repositorio y entra en la carpeta:
-git clone <a href="https://github.com/Kath-Valenzula/pinna-costa-angular.git">https://github.com/Kath-Valenzula/pinna-costa-angular.git</a>
-cd pinna-costa-angular</li>
-<li>Instala las dependencias:
-npm install</li>
-<li>Levanta el servidor de desarrollo:
-npx ng serve --open</li>
-<li>Abre tu navegador en <a href="http://localhost:4200/">http://localhost:4200/</a>.</li>
+<li>Clona el repositorio y entra en la carpeta:<b>Example :</b><div><pre class="line-numbers"><code class="language-bash">git clone https://github.com/Kath-Valenzula/pinna-costa-angular.git
+cd pinna-costa-angular</code></pre></div></li>
+<li>Instala las dependencias:<b>Example :</b><div><pre class="line-numbers"><code class="language-bash">npm install</code></pre></div></li>
+<li>Inicia el servidor de desarrollo:<b>Example :</b><div><pre class="line-numbers"><code class="language-bash">npx ng serve --open</code></pre></div></li>
+<li>Abre <a href="http://localhost:4200/">http://localhost:4200/</a> en tu navegador.</li>
 </ol>
-<h2>Datos de ejemplo y API</h2>
-<p>Los servicios de <code>JsonService</code> consumen archivos JSON publicados en
-<a href="https://kath-valenzula.github.io/my-json-repo-pina-costa/">GitHub Pages</a>.
-Estos archivos provienen del repositorio
-<a href="https://github.com/Kath-Valenzula/my-json-repo-pina-costa"><code>my-json-repo-pina-costa</code></a>
-y se utilizan para simular una API sencilla.</p>
-<p>En la carpeta <code>my-json-repo-pina-costa/</code> de este proyecto se incluyen
-copias de <code>productos.json</code> y <code>encargos.json</code> para que puedas ejecutar el
-proyecto sin conexión o levantar tu propio servidor con
-<code>json-server</code>:</p>
-<b>Example :</b><div><pre class="line-numbers"><code class="language-bash">npx json-server --watch my-json-repo-pina-costa --port 3000</code></pre></div><p>Si cambias la URL del servicio a <code>http://localhost:3000</code>, podrás probar
-las operaciones CRUD de forma local.</p>
-<h2>Organización del proyecto</h2>
-<p>  src/app/pages/ → componentes de ruta (Login, Registro, Perfil, Catálogo, Carrito, Admin, etc.).</p>
-<p>  src/app/shared/ → componentes compartidos (Header, Footer).</p>
-<p>  src/app/services/ → servicios (CartService, AuthService, ProductService, UserService).</p>
-<p>  Formularios en cada página usan Reactive Forms (FormGroup + FormControl).</p>
-<h2>Gestión de tareas</h2>
-<p>Trello board con las tarjetas de avance:
-<a href="https://trello.com/invite/b/6841b7501513a7c851f63262/ATTI3972defad988bed90611a1ea7585c395258AECA5/pina-costa">https://trello.com/invite/b/6841b7501513a7c851f63262/ATTI3972defad988bed90611a1ea7585c395258AECA5/pina-costa</a></p>
-<h2>Scripts útiles</h2>
-<p>Desarrollo:
-ng serve
-Generar componente/directiva/servicio:
-ng generate component my-new-component
-Build producción:
-ng build --prod
-Pruebas unitarias:
-ng test
-Pruebas e2e:
-ng e2e</p>
-<p>Generar documentación del código:
-npm run docs</p>
-<p>Compilar las pruebas de Cypress con TypeScript:
-<code>npx tsc -p cypress/tsconfig.json</code>
-Si tu herramienta usa otra ruta, verifica que no agregue un segundo <code>cypress/</code>.</p>
-<h2>Pruebas con navegador headless</h2>
-<ol>
-<li>Instala Chromium/Chrome y su driver:
-<code>sudo apt-get install -y chromium-browser chromium-chromedriver</code></li>
-<li>Ejecuta las pruebas unitarias en modo headless:
-<code>npm test -- --browsers=ChromeHeadless --watch=false</code></li>
-<li>Si Karma no encuentra Chrome, usa la ruta que provee Puppeteer:
-<code>CHROME_BIN=$(node -p &quot;require(&#39;puppeteer&#39;).executablePath()&quot;) npm test -- --browsers=ChromeHeadless --watch=false</code></li>
-</ol>
-<h2>Más info</h2>
-<p>Documentación oficial de Angular: <a href="https://angular.io">https://angular.io</a></p>
-<p>Guía de estilos y mejores prácticas: <a href="https://angular.io/guide/styleguide">https://angular.io/guide/styleguide</a></p>
+<h2>Datos de ejemplo</h2>
+<p>El servicio <code>JsonService</code> consume archivos JSON alojados en <a href="https://kath-valenzula.github.io/my-json-repo-pina-costa/">GitHub Pages</a>. En <code>my-json-repo-pina-costa/</code> se incluyen copias de <code>productos.json</code> y <code>encargos.json</code> por si deseas ejecutar un servidor local con <code>json-server</code>:</p>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-bash">npx json-server --watch my-json-repo-pina-costa --port 3000</code></pre></div><p>Cambia la URL en <code>src/app/services/json.service.ts</code> para apuntar a <code>http://localhost:3000</code> y probar las operaciones CRUD localmente.</p>
+<h2>Estructura del proyecto</h2>
+<ul>
+<li><code>src/app/pages/</code> – componentes de cada página (Login, Registro, Perfil, Catálogo, Carrito, Admin, etc.).</li>
+<li><code>src/app/shared/</code> – componentes compartidos (Header, Footer).</li>
+<li><code>src/app/services/</code> – servicios (CartService, AuthService, ProductService, UserService).</li>
+</ul>
+<h2>Scripts disponibles</h2>
+<ul>
+<li><code>ng serve</code> – servidor de desarrollo.</li>
+<li><code>ng generate component MyComponent</code> – generar código Angular.</li>
+<li><code>npm run docs</code> – generar documentación con Compodoc en <code>documentation/</code>.</li>
+<li><code>ng test</code> – ejecutar pruebas unitarias.</li>
+<li><code>ng e2e</code> – ejecutar pruebas end-to-end.</li>
+</ul>
+<h2>Pruebas</h2>
+<p>Para ejecutar las pruebas en modo headless utiliza:</p>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-bash">npm test -- --browsers=ChromeHeadless --watch=false</code></pre></div><p>Si Karma no encuentra Chrome puedes definir la variable <code>CHROME_BIN</code> de acuerdo con la ruta entregada por Puppeteer.</p>
+<h2>Documentación</h2>
+<p>La documentación del código se genera con <a href="https://compodoc.app/">Compodoc</a>:</p>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-bash">npm run docs</code></pre></div><p>El resultado se aloja en la carpeta <code>documentation/</code> y puedes abrir <code>index.html</code> para navegarla.</p>
 <h2>Despliegue</h2>
-<p>Para publicar la aplicación en <strong>GitHub Pages</strong> puedes ejecutar:</p>
-<b>Example :</b><div><pre class="line-numbers"><code class="language-bash">npm run deploy</code></pre></div><p>El sitio estará disponible (tras configurar tu usuario) en:
-<a href="https://your-user.github.io/pinna-costa-angular/">https://your-user.github.io/pinna-costa-angular/</a></p>
-<h3>Datos JSON accesibles por HTTP</h3>
-<p>Dentro de este repositorio se incluye la carpeta <code>my-json-repo-pina-costa</code>
-con los archivos <code>encargos.json</code> y <code>productos.json</code>. Puedes publicarla en
-<strong>GitHub Pages</strong> para que el servicio <code>JsonService</code> acceda a ellos vía
-HTTP:</p>
+<p>Para publicar la aplicación en <strong>GitHub Pages</strong> ejecuta:</p>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-bash">npm run deploy</code></pre></div><p>La aplicación quedará disponible en <code>https://&lt;usuario&gt;.github.io/pinna-costa-angular/</code>.</p>
+<h3>Publicar los archivos JSON</h3>
+<p>Puedes alojar <code>my-json-repo-pina-costa/</code> en tu propio repositorio y publicarlo en GitHub Pages:</p>
 <b>Example :</b><div><pre class="line-numbers"><code class="language-bash">cd my-json-repo-pina-costa
 git init
 git add .
 git commit -m &quot;Datos para la API&quot;
 git remote add origin https://github.com/&lt;usuario&gt;/my-json-repo-pina-costa.git
 git push -u origin main
-gh-pages -d .</code></pre></div><p>Alternativamente, ejecuta un servidor local con <code>json-server</code> para probar
-las operaciones <strong>GET/POST/PUT/DELETE</strong>:</p>
-<b>Example :</b><div><pre class="line-numbers"><code class="language-bash">npx json-server --watch my-json-repo-pina-costa --port 3000</code></pre></div><p>Actualiza las URLs en <code>src/app/services/json.service.ts</code> si deseas apuntar
-a este servidor local.</p>
-<h2>Docker</h2>
+npx gh-pages -d .</code></pre></div><h2>Docker</h2>
 <ol>
-<li><strong>Instala Docker</strong> en tu sistema (Docker Desktop en Windows o Docker Engine en Linux) y verifica con:</li>
+<li>Verifica que Docker esté instalado:<b>Example :</b><div><pre class="line-numbers"><code class="language-bash">docker --version</code></pre></div></li>
+<li>Construye y ejecuta la imagen:<b>Example :</b><div><pre class="line-numbers"><code class="language-bash">docker build -t pina-costa-angular .
+docker run --rm -p 8080:80 pina-costa-angular</code></pre></div>La aplicación estará disponible en <a href="http://localhost:8080/">http://localhost:8080/</a>.</li>
 </ol>
-<b>Example :</b><div><pre class="line-numbers"><code class="language-bash">docker --version</code></pre></div><ol start="2">
-<li>En la <strong>raíz</strong> del proyecto ejecuta:</li>
-</ol>
-<b>Example :</b><div><pre class="line-numbers"><code class="language-bash">docker build -t pina-costa-angular .
-docker run --rm -p 8080:80 pina-costa-angular</code></pre></div><p>Abre <a href="http://localhost:8080/">http://localhost:8080/</a> para ver la aplicación.</p>
-<p>No ejecutes las líneas del <code>Dockerfile</code> de forma manual ni dentro de <code>dist/</code>. Usa <code>docker build</code> para procesar cada paso correctamente.</p>
-<h2>Despliegue en la nube con Docker</h2>
+<h3>Despliegue en la nube con Docker</h3>
 <ol>
-<li>Etiqueta la imagen y súbela a un registro público (Docker Hub u otro):</li>
+<li>Etiqueta la imagen y súbela a un registro público:<b>Example :</b><div><pre class="line-numbers"><code class="language-bash">docker tag pina-costa-angular &lt;usuario&gt;/pinna-costa-angular:latest
+docker push &lt;usuario&gt;/pinna-costa-angular:latest</code></pre></div></li>
+<li>En la plataforma de contenedores de tu preferencia ejecuta:<b>Example :</b><div><pre class="line-numbers"><code class="language-bash">docker run -d -p 80:80 &lt;usuario&gt;/pinna-costa-angular:latest</code></pre></div>Finalmente comparte la URL pública proporcionada por el proveedor.</li>
 </ol>
-<b>Example :</b><div><pre class="line-numbers"><code class="language-bash">docker tag pina-costa-angular &lt;usuario&gt;/pinna-costa-angular:latest
-docker push &lt;usuario&gt;/pinna-costa-angular:latest</code></pre></div><ol start="2">
-<li>En Docker Lab o cualquier plataforma que soporte contenedores
-ejecuta la imagen publicada:</li>
-</ol>
-<b>Example :</b><div><pre class="line-numbers"><code class="language-bash">docker run -d -p 80:80 &lt;usuario&gt;/pinna-costa-angular:latest</code></pre></div><p>Finalmente comparte la URL pública entregada por el proveedor para
-acceder a la aplicación.</p>
-<p>Este README incluye:</p>
-<ul>
-<li>Una descripción general y lista de <strong>funcionalidades</strong>.</li>
-<li><strong>Pasos de instalación</strong> claros.</li>
-<li>Organización de carpetas.</li>
-<li>Referencia al <strong>Trello</strong>.</li>
-<li>Comandos más usados.</li>
-</ul>
+<hr>
+<p>Tablero de tareas en Trello: <a href="https://trello.com/invite/b/6841b7501513a7c851f63262/ATTI3972defad988bed90611a1ea7585c395258AECA5/pina-costa">https://trello.com/invite/b/6841b7501513a7c851f63262/ATTI3972defad988bed90611a1ea7585c395258AECA5/pina-costa</a></p>
 
 
 
